@@ -2,8 +2,10 @@ import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import app from "./base.js";
 import { AuthContext } from "./Auth.js";
+import UserDataContext from "./Context/credentialscontext.js";
 
 const Login = ({ history }) => {
+  const userData=useContext(UserDataContext)
   const handleLogin = useCallback(
     async event => {
       event.preventDefault();
@@ -12,6 +14,8 @@ const Login = ({ history }) => {
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
+          userData.email=email.value
+          userData.password=password.value
         history.push("/");
       } catch (error) {
         alert(error);
