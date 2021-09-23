@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { withRouter } from "react-router";
+import { Redirect, withRouter } from "react-router";
 import app from "./base";
 
 const SignUp = ({ history }) => {
@@ -16,6 +16,10 @@ const SignUp = ({ history }) => {
     }
   }, [history]);
 
+  const logInInstead = () => {
+    history.push('/login');
+  }
+
   return (
     <div>
       <h1>Sign up</h1>
@@ -30,6 +34,9 @@ const SignUp = ({ history }) => {
         </label>
         <button type="submit">Sign Up</button>
       </form>
+      <div>
+      <button onClick={logInInstead}>Log In</button>
+      </div>
     </div>
   );
 };
