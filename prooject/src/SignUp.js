@@ -30,15 +30,17 @@ const SignUp = ({history}) => {
         }
     }, [history]);
 
-    const changeModei=()=>{
-      const container = document.getElementById('container');
-      container.classList.remove(classes.right_panel_active);
-    }
+    const changeModei = () => {
+        const container = document.getElementById("container");
+        container.classList.remove(classes.right_panel_active);
+      };
+    
+      const changeModeu = () => {
+        const container = document.getElementById("container");
+        container.classList.add(classes.right_panel_active);
+      };
 
-    const changeModeu=()=>{
-      const container = document.getElementById('container');
-      container.classList.add(classes.right_panel_active);
-    }
+    
 
     // const redirect=()=>{
     //     window.location.href = "http://localhost:3000/home";
@@ -47,7 +49,7 @@ const SignUp = ({history}) => {
     return (
        
 <body className={classes.body}>
-    <h2  className={classes.h2}>Sign in/up Form</h2>
+    
     <div className={classes.container} id="container">
         <div className={`${classes.form_container} ${classes.sign_up_container}`}>
             <form className={classes.form} action="#">
@@ -58,7 +60,7 @@ const SignUp = ({history}) => {
                 <button className={classes.button}>Sign Up</button>
             </form>
         </div>
-        <div className={`${classes.form_container} ${classes.sign_up_container}`}>
+        <div className={`${classes.form_container} ${classes.sign_in_container}`}>
             <form className={classes.form} action="/join">
                 <h1 className={classes.h1}>Sign in</h1>
                 <input type="email" placeholder="Email" />

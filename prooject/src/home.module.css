@@ -4,7 +4,9 @@
   padding: 0;
 }
 .navbar {
-  background-color: rgb(31, 95, 95);
+  background-color: rgba(31, 95, 95,.90);
+  background: linear-gradient(to right, #0d423e,#1b8a82);
+  height: 100px;
 }
 .navbar ul {
   overflow: auto;
@@ -12,8 +14,9 @@
 .navbar li {
   float: left;
   list-style: none;
-  margin: 13px 20px;
-  line-height: 80px;
+  margin: 13px 15px;
+  /* line-height: 60px; */
+  padding: 15px;
 }
 .navbar li a {
   padding: 3px 3px;
@@ -21,7 +24,7 @@
   color: white;
 }
 .navbar li a:hover {
-  color: red;
+  color: black;
 }
 
 .navbar input {
@@ -34,10 +37,10 @@
 .logo {
   color: white;
   font-size: 35px;
-  line-height: 80px;
-  padding: 0 100px;
+  line-height: 30px;
+  padding: 25px;
   font-weight: bold;
-  margin-right: 850px;
+  margin-right: 650px;
 }
 
 .auth {
@@ -78,19 +81,19 @@
 }
 .slide img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 .slide img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
-.image {
+.images {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
-.image img {
+.images img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 /* Legend */
@@ -125,7 +128,8 @@
   color: #fff;
   text-align: left;
   margin-left: 30px;
-  padding-bottom: 10px;
+  margin-top: 150px;
+  padding-bottom: 10px; 
 }
 .content_txt h2 {
   font-family: Quicksand;
@@ -135,6 +139,7 @@
   color: #fff;
   text-align: left;
   margin-left: 30px;
+  margin-top: 10px;
 }
 
 /* Switch */
@@ -437,4 +442,16 @@
   96% {
     margin-left: 45px;
   }
+}
+
+footer{
+  background-color: white;
+  color: rgb(31, 95, 95);
+  font-weight: bold;
+  font-family: sans-serif;
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  text-align: center;
+  padding: 5px;
 }
