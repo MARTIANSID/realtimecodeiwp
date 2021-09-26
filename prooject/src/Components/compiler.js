@@ -49,6 +49,8 @@ export default function Compiler() {
         axios.patch(url, prog)
 
     }
+
+
     const compileCode = () => {
         console.log("yup") // db.ref("Rooms").remove()
         var program = {
@@ -63,13 +65,7 @@ export default function Compiler() {
             
             setOutput(result)
         })
-           
-        
-          
-            // setOutput(()));
 
-
-            
 
     }
 
