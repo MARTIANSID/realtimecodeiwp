@@ -10,7 +10,7 @@
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     height: 100vh;
-    margin: -20px 0 50px;
+    margin: 100px;
   }
   
   .h1 {
@@ -43,8 +43,8 @@
   
   .button {
     border-radius: 20px;
-    border: 1px solid #ff4b2b;
-    background-color: #ff4b2b;
+    border: 1px solid #1BA098;
+    background-color: #1ba098;
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
@@ -158,9 +158,9 @@
   }
   
   .overlay {
-    background: #ff416c;
-    background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    background: #1BA098;
+    background: -webkit-linear-gradient(to right, #1BA098, #1b8a);
+    background: linear-gradient(to right, #1BA098, #1b8a82);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
