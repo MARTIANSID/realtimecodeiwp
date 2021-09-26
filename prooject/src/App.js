@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import CreateroomState from "./Context/CreateroomState"
 import UserState from './Context/credentialsState'
 import Compiler from "./Components/compiler";
+import Joinroom from "./Components/joinroom";
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                                 component={Home}/> 
                             {/* <Route exact path="/login"
                                 component={Login}/>  */}
+                                <Route  exact path="/join" component={Joinroom} />
                             <Route exact path="/signup"
                                 component={SignUp}/>
                             <Route  path="/compiler/:id"  component={Compiler}></Route>

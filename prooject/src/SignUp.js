@@ -40,6 +40,10 @@ const SignUp = ({history}) => {
       container.classList.add(classes.right_panel_active);
     }
 
+    // const redirect=()=>{
+    //     window.location.href = "http://localhost:3000/home";
+    // }
+
     return (
        
 <body className={classes.body}>
@@ -55,7 +59,7 @@ const SignUp = ({history}) => {
             </form>
         </div>
         <div className={`${classes.form_container} ${classes.sign_up_container}`}>
-            <form className={classes.form} action="#">
+            <form className={classes.form} action="/join">
                 <h1 className={classes.h1}>Sign in</h1>
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
