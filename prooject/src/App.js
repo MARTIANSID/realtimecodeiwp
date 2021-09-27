@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./Home";
-import Login from "./Login";
+// import Login from "./Login";
 import SignUp from "./SignUp";
 import {AuthProvider} from "./Auth";
-import PrivateRoute from "./PrivateRoute";
+// import PrivateRoute from "./PrivateRoute";
 import CreateroomState from "./Context/CreateroomState"
 import UserState from './Context/credentialsState'
 import Compiler from "./Components/compiler";
@@ -19,7 +19,7 @@ const App = () => {
                 <AuthProvider>
                     <Router>
                         <div>
-                             <PrivateRoute exact path="/"
+                             <Route exact path="/"
                                 component={Home}/> 
                             {/* <Route exact path="/login"
                                 component={Login}/>  */}
