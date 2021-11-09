@@ -7,7 +7,7 @@ import {useHistory} from 'react-router-dom'
 
 // import UserDataContext from '../Context/credentialscontext'
 
-export default function Joinroom() {
+export default function     Joinroom() {
 
 
     let history=useHistory()

@@ -17,7 +17,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2'
 
 const db = firebase.database();
 const uid = uuid()
-export default function Compiler() {
+export default function     Compiler() {
     const userData = useContext(UserDataContext)
     const roomdata = useContext(Createroomcontext)
     const [code, setCode] = useState("");
@@ -65,8 +65,6 @@ export default function Compiler() {
             
             setOutput(result)
         })
-
-
     }
 
 
@@ -79,7 +77,7 @@ export default function Compiler() {
 
     return (
         <div style={
-            {color: 'white'}
+            {color: 'black'}
         }>
             <select onChange={updateLang}>
                 <option value="java">JAVA</option>
