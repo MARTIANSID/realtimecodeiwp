@@ -66,7 +66,12 @@ const SignUp = ({history}) => {
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
                 <button className={classes.button} >Sign In</button>
+                <br></br>
+                <div>
+                <button className={classes.button}>Sign In with Google</button>
+                    </div>
             </form>
+            
         </div>
         <div className={classes.overlay_container}>
             <div className={classes.overlay}>

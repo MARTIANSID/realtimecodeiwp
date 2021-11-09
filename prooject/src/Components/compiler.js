@@ -100,7 +100,7 @@ export default function Compiler() {
                 }
             onBeforeChange={updateCode}    />
             <button onClick={compileCode}>Compile</button>
-            <h1>{output}</h1>
+            <h1 style={{color: 'red'}}>{output}</h1>
 
         </div>
     )
