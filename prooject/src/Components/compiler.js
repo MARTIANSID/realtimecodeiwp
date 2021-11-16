@@ -12,12 +12,14 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import { Controlled as CodeMirror } from 'react-codemirror2'
+import './compiler.css'
+import Message from './message';
 
 // import { highlight, languages } from 'prismjs/components/prism-core';
 
 const db = firebase.database();
 const uid = uuid()
-export default function Compiler() {
+export default function     Compiler() {
     const userData = useContext(UserDataContext)
     const roomdata = useContext(Createroomcontext)
     const [code, setCode] = useState("");
@@ -65,8 +67,6 @@ export default function Compiler() {
             
             setOutput(result)
         })
-
-
     }
 
 
@@ -79,8 +79,10 @@ export default function Compiler() {
 
     return (
         <div style={
-            {color: 'white'}
+            {color: 'black'}
         }>
+            <div className="two">
+                <div className="codepart">
             <select onChange={updateLang}>
                 <option value="java">JAVA</option>
                 <option value="python3">PYTHON</option>
@@ -88,6 +90,7 @@ export default function Compiler() {
 
 
             </select>
+            
             <CodeMirror value={code}
                 options={
                     {
@@ -98,9 +101,17 @@ export default function Compiler() {
                        
                     }
                 }
-            onBeforeChange={updateCode}    />
+            onBeforeChange={updateCode}   />
+            
+            
+            
             <button onClick={compileCode}>Compile</button>
-            <h1>{output}</h1>
+            <h1 style={{color: 'red'}}>{output}</h1>
+            </div>
+            <div className="messagePart">
+                <Message id={id} className="messagePart"/>
+            </div>
+            </div>
 
         </div>
     )

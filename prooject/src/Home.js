@@ -10,8 +10,10 @@ const Home = () => {
             <div>
                 <nav className={classes.navbar}>
                     <ul>
-                        <li><a className={classes.logo} href="/">Real Time Coding</a></li>
-                        <li><a className={classes.auth} href="/signup">Sign-in/Sign-up to continue</a></li>
+                        <li><a className={classes.logo} href="/">ℝeal Time ℂoding</a></li>
+                        <li><a className={classes.auth} href="/signup">Sign-in/Sign-up</a></li>
+                        <li><a className={classes.auth} href="/homme">Home</a></li>
+                        <li><a className={classes.auth} href="/signup">Support</a></li>
                     </ul>
                 </nav>
                 <div id={classes.slider}>
@@ -30,7 +32,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className={classes.images}>
-                                <img src="1.jpg"/>
+                                <img src="home.jpg"/>
                             </div>
                         </div>
 
@@ -48,7 +50,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className={classes.images}>
-                                <img src="2.jpg"/>
+                                <img src="collaborative.jpg"/>
                             </div>
                         </div>
 
@@ -65,7 +67,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className={classes.images}>
-                                <img src="3.jpg"/>
+                                <img src="chat.png"/>
                             </div>
                         </div>
 
@@ -84,6 +86,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <footer> 🖤 Made by Saima , Aniket, Preetham, Aditya, Badhan.  </footer>
         </>
     );
 };
