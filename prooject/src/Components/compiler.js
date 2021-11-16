@@ -12,6 +12,8 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import { Controlled as CodeMirror } from 'react-codemirror2'
+import './compiler.css'
+import Message from './message';
 
 // import { highlight, languages } from 'prismjs/components/prism-core';
 
@@ -81,6 +83,8 @@ export default function Compiler() {
         <div style={
             {color: 'white'}
         }>
+            <div className="two">
+                <div className="codepart">
             <select onChange={updateLang}>
                 <option value="java">JAVA</option>
                 <option value="python3">PYTHON</option>
@@ -88,6 +92,7 @@ export default function Compiler() {
 
 
             </select>
+            
             <CodeMirror value={code}
                 options={
                     {
@@ -98,9 +103,17 @@ export default function Compiler() {
                        
                     }
                 }
-            onBeforeChange={updateCode}    />
+            onBeforeChange={updateCode}   />
+            
+            
+            
             <button onClick={compileCode}>Compile</button>
             <h1 style={{color: 'red'}}>{output}</h1>
+            </div>
+            <div className="messagePart">
+                <Message id={id} className="messagePart"/>
+            </div>
+            </div>
 
         </div>
     )
