@@ -1,0 +1,14 @@
+.messageMain {
+    height: 100%;
+    /* width: 40%; */
+    align-items: center;
+}
+
+.messageHeading {
+    text-align: center;
+    color: black;
+}
+
+.messageSmall {
+    color: gray;
+}

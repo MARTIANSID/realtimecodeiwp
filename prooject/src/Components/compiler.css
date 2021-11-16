@@ -1,0 +1,13 @@
+.codepart {
+    width: 60%;
+}
+
+.two {
+    display: flex;
+    flex-direction: row;
+}
+
+.messagePart {
+    
+    align-items: center;
+}
