@@ -3,11 +3,11 @@ import MessageList from "./messageList";
 import MessageSend from "./messageSend";
 import './message.css'
 
-function Message({ id ,email}) {
+function Message({ id, email }) {
     return (
         <div className="messageMain">
-            <MessageList id={id} email={email}/>
-            <MessageSend id={id}/>
+            <MessageList id={id}/>
+            <MessageSend id={id} email={email}/>
         </div>
     )
 }

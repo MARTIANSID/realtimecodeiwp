@@ -4,6 +4,7 @@ import './message.css'
 function MessageFloat({ message }) {
     return (
         <div>
+            <h3 className="messageHeader">{message.email}</h3>
             <h4 className="messageSmall">{message.title}</h4>
         </div>
     )

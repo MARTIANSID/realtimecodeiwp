@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import app from "../base";
 
-function MessageSend({ id }) {
+function MessageSend({ id, email }) {
     const [title, setTitle] = useState('');
 
     const handleOnChange = (e) => {
@@ -13,7 +13,7 @@ function MessageSend({ id }) {
        
         const message = {
             title,
-
+            email
         };
 
         messageRef.push(message);
