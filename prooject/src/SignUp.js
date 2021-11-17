@@ -33,6 +33,7 @@ const SignUp = ({history}) => {
     const changeModei = () => {
         const container = document.getElementById("container");
         container.classList.remove(classes.right_panel_active);
+        // container.classList.add(classes.le)
       };
     
       const changeModeu = () => {
@@ -40,7 +41,6 @@ const SignUp = ({history}) => {
         container.classList.add(classes.right_panel_active);
       };
 
-    
 
     // const redirect=()=>{
     //     window.location.href = "http://localhost:3000/home";
@@ -76,23 +76,22 @@ const SignUp = ({history}) => {
         <div className={classes.overlay_container}>
             <div className={classes.overlay}>
                 <div className={`${classes.overlay_panel} ${classes.overlay_left}`}>
-                    <h1 className={classes.h1}>Welcome Back!</h1>
-                    <p className={classes.p }>To keep connected with us please login with your personal info</p>
+                <h1 className={classes.h1}>Hello, Friend!</h1>
+                <p className={classes.p}>Enter your personal details and start journey with us</p>
+                 
                     <h2>Happy Coding</h2><br />
-                    <button className={`${classes.ghost} ${classes.button} `} onClick={changeModei} id="signIn">Sign In</button>
+                    <button className={`${classes.ghost} ${classes.button} `} onClick={changeModei} id="signIn">Sign Up</button>
                 </div>  
                 <div className={`${classes.overlay_panel} ${classes.overlay_right}`}>
-                    <h1 className={classes.h1}>Hello, Friend!</h1>
-                    <p className={classes.p}>Enter your personal details and start journey with us</p>
+                <h1 className={classes.h1}>Welcome Back!</h1>
+                <p className={classes.p }>To keep connected with us please login with your personal info</p>
                     <h2>Happy Coding</h2><br />
-                    <button className={`${classes.ghost} ${classes.button} `} onClick={changeModeu} id="signUp">Sign Up</button>
+                    
+                    <button className={`${classes.ghost} ${classes.button} `} onClick={changeModeu} id="signUp">Sign In</button>
                 </div>
             </div>
         </div>
     </div>
-
-    
-        {/* <script src="./main.js"></script> */}
 </body>
 
     );

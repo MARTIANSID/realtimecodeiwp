@@ -12,15 +12,18 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import { Controlled as CodeMirror } from 'react-codemirror2'
+import  { Redirect } from 'react-router-dom'
 import './compiler.css'
 import Message from './message';
+// import UserDataContext from "../Context/credentialscontext";
 
 // import { highlight, languages } from 'prismjs/components/prism-core';
 
 const db = firebase.database();
 const uid = uuid()
 export default function     Compiler() {
-    const userData = useContext(UserDataContext)
+    const userData = useContext(UserDataContext);
+    // const userData = useContext(UserDataContext)
     const roomdata = useContext(Createroomcontext)
     const [code, setCode] = useState("");
     const [output, setOutput] = useState("");
@@ -29,6 +32,12 @@ export default function     Compiler() {
     const {id} = useParams()
 
     useEffect(() => {
+        if(userData.email==null){
+            console.log(userData.email)
+            return <Redirect to='/signup' />    
+        }
+
+
         db.ref("Rooms").child(id).on("value", snapshot => {
             var data = snapshot.val()
             if (data.userid != uid) {
