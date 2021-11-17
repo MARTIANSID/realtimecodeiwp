@@ -1,7 +1,7 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext, useEffect} from 'react' 
 import axios from 'axios';
 import Createroomcontext from '../Context/createroom'
-import UserDataContext from '../Context/credentialscontext';
+import UserDataContext from '../Context/credentialscontext'; 
 import {useParams} from 'react-router-dom'
 import firebase from 'firebase';
 import uuid from 'react-uuid'
@@ -106,7 +106,7 @@ export default function     Compiler({history}) {
             <h1 style={{color: 'red'}}>{output}</h1>
             </div>
             <div className="messagePart">
-                <Message id={id} className="messagePart"/>
+                <Message id={id} email={userData.email} className="messagePart"/>
             </div>
             </div>
 
