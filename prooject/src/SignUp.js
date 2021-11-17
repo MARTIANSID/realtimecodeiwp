@@ -1,17 +1,19 @@
-import React, {useCallback, useContext} from "react";
+import React, {useCallback, useContext,useState} from "react";
 import {withRouter} from "react-router";
 import app from "./base";
 import UserDataContext from "./Context/credentialscontext.js";
 import classes from "./auth.module.css"
 
 const SignUp = ({history}) => {
+    const [email, setEmail] = useState("lol@gmail.com")
+    const [password, setPassowrd] = useState("123456")
     const userData = useContext(UserDataContext)
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
-        const {email, password} = event.target.elements;
         try {
-            await app.auth().createUserWithEmailAndPassword(email.value, password.value);
-            history.push("/");
+            console.log(email)
+            await app.auth().createUserWithEmailAndPassword(email, password);
+            history.push("/join");
         } catch (error) {
             alert(error);
         }
@@ -19,12 +21,12 @@ const SignUp = ({history}) => {
 
     const handleLogin = useCallback(async event => {
         event.preventDefault();
-        const {email, password} = event.target.elements;
+       
         try {
-            await app.auth().signInWithEmailAndPassword(email.value, password.value);
-            userData.email = email.value
-            userData.password = password.value
-            history.push("/");
+            await app.auth().signInWithEmailAndPassword(email, password);
+            userData.email = email
+            userData.password = password
+            history.push("/join");
         } catch (error) {
             alert(error);
         }
@@ -41,6 +43,8 @@ const SignUp = ({history}) => {
         container.classList.add(classes.right_panel_active);
       };
 
+      
+
 
     // const redirect=()=>{
     //     window.location.href = "http://localhost:3000/home";
@@ -52,20 +56,20 @@ const SignUp = ({history}) => {
     
     <div className={classes.container} id="container">
         <div className={`${classes.form_container} ${classes.sign_up_container}`}>
-            <form className={classes.form} action="#">
+            <form className={classes.form} action="/join">
                 <h1 className={classes.h1}>Create Account</h1>
                 <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button className={classes.button}>Sign Up</button>
+                <input type="email" placeholder="Email"onChange={(event)=>{setEmail(event.target.value)}} value={email}/>
+                <input type="password" placeholder="Password" onChange={(event)=>{setPassowrd(event.target.value)}} value={password}  />
+                <button className={classes.button} onClick={handleSignUp}>Sign Up</button>
             </form>
         </div>
         <div className={`${classes.form_container} ${classes.sign_in_container}`}>
             <form className={classes.form} action="/join">
                 <h1 className={classes.h1}>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button className={classes.button} >Sign In</button>
+                <input type="email" placeholder="Email" onChange={(event)=>{setEmail(event.target.value)}} value={email}/>
+                <input type="password" placeholder="Password"  onChange={(event)=>{setPassowrd(event.target.value)}} value={password}/>
+                <button className={classes.button} onClick={handleLogin} >Sign In</button>
                 <br></br>
                 <div>
                 <button className={classes.button}>Sign In with Google</button>
