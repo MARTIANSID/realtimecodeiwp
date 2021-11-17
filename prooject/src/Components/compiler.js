@@ -32,13 +32,9 @@ export default function     Compiler({history}) {
     const {id} = useParams()
 
     useEffect(() => {
-        console.log(userData.email)
         if(userData.email==""||userData.email==null){
             history.push("/signup");
-        
         }
-
-
         db.ref("Rooms").child(id).on("value", snapshot => {
             var data = snapshot.val()
             if (data.userid != uid) {
@@ -50,9 +46,7 @@ export default function     Compiler({history}) {
 
 
     const updateCode = (editor,data,value) => {
-       
         setCode(value)
-
         const url = `https://real-time-coding-default-rtdb.firebaseio.com/Rooms/${id}.json`
         const prog = {
             code: value,
@@ -61,8 +55,6 @@ export default function     Compiler({history}) {
         axios.patch(url, prog)
 
     }
-
-
     const compileCode = () => {
         console.log("yup") // db.ref("Rooms").remove()
         var program = {
@@ -97,8 +89,6 @@ export default function     Compiler({history}) {
                 <option value="java">JAVA</option>
                 <option value="python3">PYTHON</option>
                 <option value="php">PHP</option>
-
-
             </select>
             
             <CodeMirror value={code}
@@ -112,9 +102,6 @@ export default function     Compiler({history}) {
                     }
                 }
             onBeforeChange={updateCode}   />
-            
-            
-            
             <button onClick={compileCode}>Compile</button>
             <h1 style={{color: 'red'}}>{output}</h1>
             </div>

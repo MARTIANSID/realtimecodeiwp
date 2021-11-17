@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import UserDataContext from "../Context/credentialscontext";
 import axios from "axios";
 import nextId from "react-id-generator";
@@ -10,6 +10,7 @@ import classes from "./joinroom.module.css";
 
 export default function Joinroom() {
   let history = useHistory();
+ const[id,setId] = useState()
   const userData = useContext(UserDataContext);
 
   const createRoom = () => {
@@ -32,7 +33,14 @@ export default function Joinroom() {
     });
   };
 
-  const joinRoom = () => {};
+  const joinRoom = (events) => {
+    setId(events.target.value)
+   
+  };
+
+  const join=()=>{
+    history.push("/compiler/" + id);
+  }
 
   return (
       <div className={classes.room}>
@@ -40,9 +48,9 @@ export default function Joinroom() {
    
       <label className={classes.label}>Enter Room Id</label>
       <div>
-        <input className={classes.input} />
+        <input className={classes.input} onChange={joinRoom}/>
       </div>
-      <button className={classes.joinRoombutton}>Join Room</button>
+      <button className={classes.joinRoombutton} onClick={join}>Join Room</button>
 
       <button className={classes.createRoombutton} onClick={createRoom}>
         {" "}
