@@ -21,7 +21,7 @@ import Message from './message';
 
 const db = firebase.database();
 const uid = uuid()
-export default function     Compiler() {
+export default function     Compiler({history}) {
     const userData = useContext(UserDataContext);
     // const userData = useContext(UserDataContext)
     const roomdata = useContext(Createroomcontext)
@@ -32,9 +32,10 @@ export default function     Compiler() {
     const {id} = useParams()
 
     useEffect(() => {
-        if(userData.email==null){
-            console.log(userData.email)
-            return <Redirect to='/signup' />    
+        console.log(userData.email)
+        if(userData.email==""||userData.email==null){
+            history.push("/signup");
+        
         }
 
 

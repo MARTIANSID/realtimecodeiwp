@@ -11,7 +11,9 @@ const SignUp = ({history}) => {
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
         try {
-            console.log(email)
+            userData.email = email
+            userData.password = password
+            // console.log(email)
             await app.auth().createUserWithEmailAndPassword(email, password);
             history.push("/join");
         } catch (error) {
