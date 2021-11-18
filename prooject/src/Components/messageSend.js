@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import app from "../base";
+import './message.css'
 
 function MessageSend({ id, email }) {
     const [title, setTitle] = useState('');
@@ -20,9 +21,9 @@ function MessageSend({ id, email }) {
     }
 
     return (
-        <div>
+        <div className="messageAll">
             <input type="text" onChange={handleOnChange} value={title} />
-            <button type="submit" onClick={createMessage}>Send</button>
+            <button type="submit" onClick={createMessage} className="messageSendButton">Send</button>
         </div>
     )
 }

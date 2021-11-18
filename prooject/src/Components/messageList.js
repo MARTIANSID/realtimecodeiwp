@@ -25,7 +25,7 @@ function MessageList({ id }) {
       <div>
           <h3 className="messageHeading">Messages</h3>
           <br></br>
-          <div>
+          <div className="messageMiddle">
               {messageList ? messageList.map((message, index) => <MessageFloat message={message} key={index} />) : ''}
           </div>
       </div>
