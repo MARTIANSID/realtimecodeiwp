@@ -18,7 +18,6 @@ import Message from './message';
 // import UserDataContext from "../Context/credentialscontext";
 
 // import { highlight, languages } from 'prismjs/components/prism-core';
-
 const db = firebase.database();
 const uid = uuid()
 export default function     Compiler({history}) {
@@ -32,7 +31,7 @@ export default function     Compiler({history}) {
     const {id} = useParams()
 
     useEffect(() => {
-        if(userData.email==""||userData.email==null){
+        if(localStorage.length==0){
             history.push("/signup");
         }
         db.ref("Rooms").child(id).on("value", snapshot => {
@@ -43,8 +42,6 @@ export default function     Compiler({history}) {
         })
 
     }, [])
-
-
     const updateCode = (editor,data,value) => {
         setCode(value)
         const url = `https://real-time-coding-default-rtdb.firebaseio.com/Rooms/${id}.json`
@@ -78,11 +75,16 @@ export default function     Compiler({history}) {
         console.log(lang)
         setVersion("0")
     }
+    const logout=()=>{
+        localStorage.clear();
+        history.push("/signup");
 
+    }
     return (
         <div style={
             {color: 'black'}
         }>
+            <button onClick={logout}>Logout</button>
             <div className="two">
                 <div className="codepart">
             <select onChange={updateLang}>
@@ -106,7 +108,7 @@ export default function     Compiler({history}) {
             <h1 style={{color: 'red'}}>{output}</h1>
             </div>
             <div className="messagePart">
-                <Message id={id} email={userData.email} className="messagePart"/>
+                <Message id={id} email={localStorage.getItem("email")} className="messagePart"/>
             </div>
             </div>
 
