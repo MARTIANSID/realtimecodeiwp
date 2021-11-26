@@ -18,11 +18,16 @@ function MessageSend({ id, email }) {
         };
 
         messageRef.push(message);
+        setTitle("");
+    }
+
+    const enterpressed = (e) => {
+        console.log('hey its me');
     }
 
     return (
         <div className="messageAll">
-            <input type="text" onChange={handleOnChange} value={title} />
+            <input type="text" onKeyDown={event => event.key === 'Enter' && enterpressed} onChange={handleOnChange} value={title} />
             <button type="submit" onClick={createMessage} className="messageSendButton">Send</button>
         </div>
     )

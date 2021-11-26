@@ -84,9 +84,15 @@ export default function     Compiler({history}) {
         <div style={
             {color: 'black'}
         }>
-            <button onClick={logout}>Logout</button>
+            
             <div className="two">
+                
+            
+
                 <div className="codepart">
+                <div>
+                <button onClick={logout}>Logout</button>
+                </div>
             <select onChange={updateLang}>
                 <option value="java">JAVA</option>
                 <option value="python3">PYTHON</option>

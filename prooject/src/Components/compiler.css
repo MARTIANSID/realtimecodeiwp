@@ -1,5 +1,7 @@
 .codepart {
     width: 60%;
+    height: 100vh;
+    overflow: auto;
 }
 
 .two {
