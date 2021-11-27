@@ -22,12 +22,15 @@ function MessageSend({ id, email }) {
     }
 
     const enterpressed = (e) => {
-        console.log('hey its me');
+        if (e.key == 'Enter'){
+            createMessage(e);
+        }
+        
     }
 
     return (
         <div className="messageAll">
-            <input type="text" onKeyDown={event => event.key === 'Enter' && enterpressed} onChange={handleOnChange} value={title} />
+            <input type="text" onKeyDown={enterpressed} onChange={handleOnChange} value={title} />
             <button type="submit" onClick={createMessage} className="messageSendButton">Send</button>
         </div>
     )
