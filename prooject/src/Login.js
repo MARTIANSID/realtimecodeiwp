@@ -13,9 +13,6 @@ const Login = ({ history }) => {
       event.preventDefault();
       const { email, password } = event.target.elements;
       try {
-
-      
-
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);

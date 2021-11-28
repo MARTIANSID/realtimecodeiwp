@@ -53,13 +53,13 @@ export default function     Compiler({history}) {
 
     }
     const compileCode = () => {
-        console.log("yup") // db.ref("Rooms").remove()
+        console.log("y")
         var program = {
             script: code,
             language: lang,
             versionIndex: version,
-            clientId: "40aaa2735be8158f19ee23e3b888ace2",
-            clientSecret: "368409cfb98f05026ec7039b7985c479a6a5ff91c2ee2630210646ba5fa75ee8"
+            clientId: "7ee6021fc0a692cfe28cc5f815600265",
+            clientSecret: "51737cbf33461eb8f477f08c958808e2a9488167768716b7ba095df6d0848971"
         };
         axios.post('/v1/execute', program).then(response =>{
             var result=response.data.output
@@ -80,20 +80,23 @@ export default function     Compiler({history}) {
         history.push("/signup");
 
     }
+    let myStyle={
+        color: 'red',
+        backgroundColor: 'blue'
+    }
     return (
-        <div style={
-            {color: 'black'}
+        <div  style={
+            {myStyle}
         }>
-            
+                    <div style={
+            {myStyle}
+        }>
             <div className="two">
-                
-            
-
                 <div className="codepart">
-                <div>
-                <button onClick={logout}>Logout</button>
+                <div className = "tiltbar">
+                <button className = "click1" onClick={logout}>Logout</button>
                 </div>
-            <select onChange={updateLang}>
+            <select className = "click2"onChange={updateLang}>
                 <option value="java">JAVA</option>
                 <option value="python3">PYTHON</option>
                 <option value="php">PHP</option>
@@ -110,7 +113,7 @@ export default function     Compiler({history}) {
                     }
                 }
             onBeforeChange={updateCode}   />
-            <button onClick={compileCode}>Compile</button>
+            <button className = "click3" onClick={compileCode}>Compile</button>
             <h1 style={{color: 'red'}}>{output}</h1>
             </div>
             <div className="messagePart">
@@ -119,5 +122,7 @@ export default function     Compiler({history}) {
             </div>
 
         </div>
+        </div>
+
     )
 }
