@@ -12,7 +12,7 @@ const Home = () => {
                     <ul>
                         <li><a className={classes.logo} href="/">ℝeal Time ℂoding</a></li>
                         <li><a className={classes.auth} href="/signup">Sign-in/Sign-up</a></li>
-                        <li><a className={classes.auth} href="/homme">Home</a></li>
+                        <li><a className={classes.auth} href="/interviewbeta">Interview</a></li>
                         <li><a className={classes.auth} href="/signup">Support</a></li>
                     </ul>
                 </nav>
