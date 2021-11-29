@@ -10,6 +10,7 @@ import CreateroomState from "./Context/CreateroomState"
 import UserState from './Context/credentialsState'
 import Compiler from "./Components/compiler";
 import Joinroom from "./Components/joinroom";
+import InterviewBeta from "./Interview/InterviewBeta";
 
 const App = () => {
     return (
@@ -27,6 +28,8 @@ const App = () => {
                             <Route exact path="/signup"
                                 component={SignUp}/>
                             <Route  path="/compiler/:id"  component={Compiler}></Route>
+                            <Route exact path="/interviewbeta"
+                                component={InterviewBeta}/>
                         </div>
                     </Router>
                 </AuthProvider>
