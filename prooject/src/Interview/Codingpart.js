@@ -14,7 +14,8 @@ import 'codemirror/mode/css/css'
 import { Controlled as CodeMirror } from 'react-codemirror2'
 import  { Redirect } from 'react-router-dom'
 import './compiler.css'
-import Message from './message';
+import { Typography } from '@material-ui/core';
+
 // import UserDataContext from "../Context/credentialscontext";
 
 // import { highlight, languages } from 'prismjs/components/prism-core';
@@ -29,22 +30,29 @@ export default function     Compiler({history}) {
     const [lang, setLang] = useState("java");
     const [version, setVersion] = useState("0")
     const {id} = useParams()
+    const [question, setQuestion] = useState("")
 
     useEffect(() => {
-        if(localStorage.length==0){
-            history.push("/signup");
-        }
-        db.ref("Rooms").child(id).on("value", snapshot => {
+        // if(localStorage.length==0){
+        //     history.push("/signup");
+        // }
+        db.ref("Interview").child(id).on("value", snapshot => {
             var data = snapshot.val()
             if (data.userid != uid) {
                 setCode(data.code)
+            }
+        })
+        db.ref("Interview").child(id).on("value", snapshot => {
+            var data = snapshot.val()
+            if (data.userid != uid) {
+                setQuestion(data.question)
             }
         })
 
     }, [])
     const updateCode = (editor,data,value) => {
         setCode(value)
-        const url = `https://real-time-coding-default-rtdb.firebaseio.com/Rooms/${id}.json`
+        const url = `https://real-time-coding-default-rtdb.firebaseio.com/Interview/${id}.json`
         const prog = {
             code: value,
             userid: uid
@@ -75,26 +83,39 @@ export default function     Compiler({history}) {
         console.log(lang)
         setVersion("0")
     }
+
     const logout=()=>{
-        
-        history.push("/join");
+        localStorage.clear();
+        history.push("/signup");
 
     }
+
+    const updateQuestion = (e) => {
+        setQuestion(e.target.value)
+        const url = `https://real-time-coding-default-rtdb.firebaseio.com/Interview/${id}.json`
+        const prog = {
+            question: question,
+            userid: uid,
+        }
+        axios.patch(url, prog)
+    }
+
     let myStyle={
-        color: 'red',
+        color: 'balck',
         backgroundColor: 'blue'
     }
+
     return (
-        <div  style={
-            {myStyle}
-        }>
-                    <div style={
-            {myStyle}
-        }>
-            <div className="two">
+        
+                    
+            
                 <div className="codepart">
                 <div className = "tiltbar">
-                <button className = "click1" onClick={logout}>Leave Room</button>
+                <button className = "click1" onClick={logout}>Leave Meeting</button>
+                </div>
+                <div className="questionpart">
+                <Typography variant='h6' align='left'>Question</Typography>
+                    <input type="textarea" onChange={updateQuestion} value={question} />
                 </div>
             <select className = "click2"onChange={updateLang}>
                 <option value="java">JAVA</option>
@@ -114,15 +135,13 @@ export default function     Compiler({history}) {
                 }
             onBeforeChange={updateCode}   />
             <button className = "click3" onClick={compileCode}>Compile</button>
-            <h1 style={{color: 'red'}}>{output}</h1>
+            <h1 style={{color: 'black'}}>{output}</h1>
             </div>
-            <div className="messagePart">
-                <Message id={id} email={localStorage.getItem("email")} className="messagePart"/>
-            </div>
-            </div>
+            
+            
 
-        </div>
-        </div>
+        
+     
 
     )
 }

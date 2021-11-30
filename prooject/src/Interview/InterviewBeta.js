@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Typography, AppBar } from '@material-ui/core'
 import { makeStyles } from "@material-ui/core";
 
@@ -6,8 +6,10 @@ import VideoPlayer from "./VideoPlayer";
 import Options from "./Options";
 import Notifications from "./Notifications";
 import { ContextProvider } from "./SocketContext";
+import Codingpart from "./Codingpart";
 
-import './styles.css'
+import { fullpage, codingpart, wrapper } from './styles.css'
+import { Autorenew } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -31,27 +33,60 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '100%',
+        width: '40%',
+        //backgroundColor: 'white',
+        height: 1100,
+        
       },
+
+      codingpart: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '60%',
+        backgroundColor: 'white',
+        height: 1200,
+      },
+
+      fullpage: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%',
+      
+        // backgroundColor: 'white',
+      }
 
 }));
 
 const InterviewBeta = () => {
     const classes = useStyles();
 
+    useEffect(() => {
+
+    })
+
     return (
+      <div className={`${classes.fullpage} `} >
+        <div className={`${classes.codingpart} `}>
+          <Codingpart />
+        </div>
+    
+
+    
         <ContextProvider>
-            <div className={classes.wrapper}>
+            <div className={`${classes.wrapper} `}>
             <AppBar className={classes.appBar} position='static' color='inherit'>
                 <Typography variant='h2' align='center'>Interview</Typography>
             </AppBar>
-            <VideoPlayer />
+            <VideoPlayer email={localStorage.getItem("email")} />
             <Options>
                 <Notifications />
             </Options>
         </div>
         </ContextProvider>
         
+        </div>
     );
 };
 

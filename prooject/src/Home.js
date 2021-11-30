@@ -11,9 +11,9 @@ const Home = () => {
                 <nav className={classes.navbar}>
                     <ul>
                         <li><a className={classes.logo} href="/">ℝeal Time ℂoding</a></li>
-                        <li><a className={classes.auth} href="/signup">Sign-in/Sign-up</a></li>
-                        <li><a className={classes.auth} href="/interviewbeta">Interview</a></li>
-                        <li><a className={classes.auth} href="/signup">Support</a></li>
+                        <li><a className={classes.auth} href="/signup">Start Coding</a></li>
+                        <li><a className={classes.auth} href="/signup">Interview</a></li>
+                        {/* <li><a className={classes.auth} href="/signup">Support</a></li> */}
                     </ul>
                 </nav>
                 <div id={classes.slider}>
@@ -86,7 +86,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <footer> 🖤 Made by Saima , Aniket, Preetham, Aditya, Badhan.  </footer>
+            <footer> 🖤 Property of Manav and Sidarth. Peace out  </footer>
         </>
     );
 };

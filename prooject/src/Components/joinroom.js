@@ -42,8 +42,28 @@ export default function Joinroom() {
     history.push("/compiler/" + id);
   }
 
+  const startInterview = () => {
+    const id = uuid()
+    const url = "https://real-time-coding-default-rtdb.firebaseio.com/Interview.json"
+    const data = {
+      interviewId: id,
+      emailofcreator: userData.email,
+      code: "",
+      userid: "",
+      question: "",
+    };
+
+    let urlid;
+    axios.post(url, data).then((response) => {
+      console.log(response);
+      urlid = response.data.name;
+      console.log(response.data.name);
+      history.push("/interviewbeta/" + urlid);
+    });
+  }
+
   return (
-      <div className={classes.room}>
+      <div className={classes.roombig}>
     <div className={classes.room}>
    
       <label className={classes.label}>Enter Room Id</label>
@@ -56,8 +76,15 @@ export default function Joinroom() {
         {" "}
         Create Room
       </button>
+      
     </div>
+    <div className={classes.roomsmall}>
+      <br />
+      <button className={classes.createRoombutton} onClick={startInterview} >Start Interview (beta)</button>
     </div>
+    
+    </div>
+
     
   );
 }

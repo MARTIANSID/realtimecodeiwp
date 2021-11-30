@@ -28,7 +28,7 @@ const App = () => {
                             <Route exact path="/signup"
                                 component={SignUp}/>
                             <Route  path="/compiler/:id"  component={Compiler}></Route>
-                            <Route exact path="/interviewbeta"
+                            <Route exact path="/interviewbeta/:id"
                                 component={InterviewBeta}/>
                         </div>
                     </Router>

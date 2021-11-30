@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Button, TextField, Grid, Typography, Container, Paper } from '@material-ui/core';
 
 import { Assignment, Phone, PhoneDisabled } from '@material-ui/icons';
@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { SocketContext } from './SocketContext';
+
+import firebase from 'firebase';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +44,15 @@ const Options = ({ children }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
   const [idToCall, setIdToCall] = useState('');
   const classes = useStyles();
+
+  useEffect(() => {
+  //   db.ref("Interview").child(id).on("value", snapshot => {
+  //     var data = snapshot.val()
+  //     if (data.userid != uid) {
+  //         setCode(data.code)
+  //     }
+  // })
+  })
 
   return (
     <Container className={classes.container}>

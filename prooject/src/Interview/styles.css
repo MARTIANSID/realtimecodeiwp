@@ -16,3 +16,17 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.fullpage {
+  height: 100vh;
+}
+
+.codingpart {
+  height: 100vh;
+  overflow: auto;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow: auto;
+}
