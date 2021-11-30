@@ -67,6 +67,17 @@
     border-color: #ffffff;
   }
   
+  .form {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+  }
+
   form {
     background-color: #ffffff;
     display: flex;
@@ -85,7 +96,23 @@
     margin: 8px 0;
     width: 100%;
   }
+
+  .enterid {
+    margin: 8px 0;
+    width: 65%;
+  }
   
+  .containerroom {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 1200px;
+    max-width: 100%;
+    min-height: 550px;
+  }
+
   .container {
     background-color: #fff;
     border-radius: 10px;
@@ -113,6 +140,10 @@
   .container.right_panel_active .sign_in_container {
     transform: translateX(100%);
   }
+
+  .containerroom.right_panel_active .sign_in_container {
+    transform: translateX(100%);
+  }
   
   .sign_up_container {
     left: 0;
@@ -122,6 +153,13 @@
   }
   
   .container.right_panel_active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+  }
+
+  .containerroom.right_panel_active .sign-up-container {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
@@ -156,6 +194,10 @@
   .container.right_panel_active .overlay_container {
     transform: translateX(-100%);
   }
+
+  .containerroom.right_panel_active .overlay_container {
+    transform: translateX(-100%);
+  }
   
   .overlay {
     background: #1BA098;
@@ -174,6 +216,10 @@
   }
   
   .container.right_panel_active .overlay {
+    transform: translateX(50%);
+  }
+
+  .containerroom.right_panel_active .overlay {
     transform: translateX(50%);
   }
   
@@ -199,6 +245,10 @@
   .container.right_panel_active .overlay_left {
     transform: translateX(0);
   }
+
+  .containerroom.right_panel_active .overlay_left {
+    transform: translateX(0);
+  }
   
   .overlay_right {
     right: 0;
@@ -206,6 +256,10 @@
   }
   
   .container.right_panel_active .overlay_right {
+    transform: translateX(20%);
+  }
+
+  .containerroom.right_panel_active .overlay_right {
     transform: translateX(20%);
   }
   

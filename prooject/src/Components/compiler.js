@@ -15,6 +15,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2'
 import  { Redirect } from 'react-router-dom'
 import './compiler.css'
 import Message from './message';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 // import UserDataContext from "../Context/credentialscontext";
 
 // import { highlight, languages } from 'prismjs/components/prism-core';
@@ -68,6 +69,8 @@ export default function     Compiler({history}) {
         })
     }
 
+    
+
 
     const updateLang = (event) => {
         let l = (event.target.value).toString()
@@ -75,26 +78,32 @@ export default function     Compiler({history}) {
         console.log(lang)
         setVersion("0")
     }
+
     const logout=()=>{
         
-        history.push("/join");
+        history.push("/joinroom");
 
     }
+
     let myStyle={
         color: 'red',
         backgroundColor: 'blue'
     }
     return (
-        <div  style={
-            {myStyle}
-        }>
-                    <div style={
-            {myStyle}
-        }>
+        
             <div className="two">
                 <div className="codepart">
                 <div className = "tiltbar">
                 <button className = "click1" onClick={logout}>Leave Room</button>
+                <div className = "copylinkbar">
+                <CopyToClipboard text={`https://realtime-coding.netlify.app/compiler/${id}`} >
+                <button className = "click3" >Copy Room Link</button>
+                </CopyToClipboard>
+                <CopyToClipboard text={`${id}`} >
+                <button className = "click3" >Copy Room ID</button>
+                </CopyToClipboard>
+                </div>
+                
                 </div>
             <select className = "click2"onChange={updateLang}>
                 <option value="java">JAVA</option>
@@ -121,8 +130,6 @@ export default function     Compiler({history}) {
             </div>
             </div>
 
-        </div>
-        </div>
-
+        
     )
 }

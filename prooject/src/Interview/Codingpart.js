@@ -15,13 +15,14 @@ import { Controlled as CodeMirror } from 'react-codemirror2'
 import  { Redirect } from 'react-router-dom'
 import './compiler.css'
 import { Typography } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
 
 // import UserDataContext from "../Context/credentialscontext";
 
 // import { highlight, languages } from 'prismjs/components/prism-core';
 const db = firebase.database();
 const uid = uuid()
-export default function     Compiler({history}) {
+export default function     Compiler() {
     const userData = useContext(UserDataContext);
     // const userData = useContext(UserDataContext)
     const roomdata = useContext(Createroomcontext)
@@ -31,6 +32,7 @@ export default function     Compiler({history}) {
     const [version, setVersion] = useState("0")
     const {id} = useParams()
     const [question, setQuestion] = useState("")
+    let history = useHistory();
 
     useEffect(() => {
         // if(localStorage.length==0){
@@ -85,8 +87,8 @@ export default function     Compiler({history}) {
     }
 
     const logout=()=>{
-        localStorage.clear();
-        history.push("/signup");
+        
+        history.push("/joinroom");
 
     }
 

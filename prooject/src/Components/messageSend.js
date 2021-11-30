@@ -31,7 +31,7 @@ function MessageSend({ id, email }) {
     return (
         <div className="messageAll">
             <input type="text" onKeyDown={enterpressed} onChange={handleOnChange} value={title} />
-            <button type="submit" onClick={createMessage} className="messageSendButton">Send</button>
+            {/* <button type="submit" onClick={createMessage} className="messageSendButton">Send</button> */}
         </div>
     )
 }
