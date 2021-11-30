@@ -17,7 +17,7 @@ const SignUp = ({history}) => {
           
             // console.log(email)
             await app.auth().createUserWithEmailAndPassword(email, password);
-            history.push("/join");
+            history.push("/joinroom");
         } catch (error) {
             alert(error);
         }
@@ -30,7 +30,7 @@ const SignUp = ({history}) => {
             userData.password = password
             localStorage.setItem("email",email);
             await app.auth().signInWithEmailAndPassword(email, password);
-            history.push("/join");
+            history.push("/joinroom");
         } catch (error) {
             alert(error);
         }
@@ -59,7 +59,7 @@ const SignUp = ({history}) => {
     
     <div className={classes.container} id="container">
         <div className={`${classes.form_container} ${classes.sign_up_container}`}>
-            <form className={classes.form} action="/join">
+            <form className={classes.form} action="/joinroom">
                 <h1 className={classes.h1}>Create Account</h1>
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email"  onChange={handleEmail} value={email}/>
@@ -68,15 +68,15 @@ const SignUp = ({history}) => {
             </form>
         </div>
         <div className={`${classes.form_container} ${classes.sign_in_container}`}>
-            <form className={classes.form} action="/join">
+            <form className={classes.form} action="/joinroom">
                 <h1 className={classes.h1}>Sign in</h1>
                 <input type="email" placeholder="Email" onChange={handleEmail} value={email}/>
                 <input type="password" placeholder="Password"  onChange={handlePassword} value={password}/>
                 <button className={classes.button} onClick={handleLogin} >Sign In</button>
-                <br></br>
+                {/* <br></br>
                 <div>
                 <button className={classes.button}>Sign In with Google</button>
-                    </div>
+                    </div> */}
             </form>
             
         </div>

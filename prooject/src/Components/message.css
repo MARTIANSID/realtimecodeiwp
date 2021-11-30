@@ -1,32 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .messageMain {
-    height: 100%;
+    height: 100vh;
     /* width: 40%; */
     align-items: center;
+    overflow: hidden;
 }
 
 .messageHeading {
     text-align: center;
     color: black;
+    height: 3vh;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    font-family: sans-serif;
 }
 
 .messageSmall {
-    color: gray;
+    color: white;
+    font-family: sans-serif;
 }
 
 .messageHeader {
+    
     color: darkgray;
     /* position: fixed; */
+    font-family: sans-serif;
 }
 
 .messageAll {
-    height: 100%;
+    height: 9vh;
     display: flex;
     flex-direction: row;
     /* position: fixed; */
+
 }
 
 .messageMiddle {
-    height: 86vh;
+    height: 87vh;
     /* position: relative; */
     overflow: auto;
 }

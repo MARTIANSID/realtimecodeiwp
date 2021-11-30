@@ -11,6 +11,7 @@ import UserState from './Context/credentialsState'
 import Compiler from "./Components/compiler";
 import Joinroom from "./Components/joinroom";
 import InterviewBeta from "./Interview/InterviewBeta";
+import JoinRoom from "./JoinRoom";
 
 const App = () => {
     return (
@@ -30,6 +31,8 @@ const App = () => {
                             <Route  path="/compiler/:id"  component={Compiler}></Route>
                             <Route exact path="/interviewbeta/:id"
                                 component={InterviewBeta}/>
+                                <Route exact path="/joinroom/"
+                                component={JoinRoom}/>
                         </div>
                     </Router>
                 </AuthProvider>

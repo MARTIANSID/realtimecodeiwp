@@ -29,14 +29,6 @@ const VideoPlayer = ({email}) => {
 
   return (
     <Grid container className={classes.gridContainer}>
-      {stream && (
-        <Paper className={classes.paper}>
-          <Grid item xs={12} md={6}>
-            <Typography variant="h5" gutterBottom>{email || 'Name'}</Typography>
-            <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
-          </Grid>
-        </Paper>
-      )}
       {callAccepted && !callEnded && (
         <Paper className={classes.paper}>
           <Grid item xs={12} md={6}>
@@ -45,6 +37,15 @@ const VideoPlayer = ({email}) => {
           </Grid>
         </Paper>
       )}
+      {stream && (
+        <Paper className={classes.paper}>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h5" gutterBottom>{email || 'Name'}</Typography>
+            <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
+          </Grid>
+        </Paper>
+      )}
+      
     </Grid>
   );
 };
