@@ -50,6 +50,7 @@ export default function Joinroom() {
       emailofcreator: userData.email,
       code: "",
       userid: "",
+      question: "",
     };
 
     let urlid;
