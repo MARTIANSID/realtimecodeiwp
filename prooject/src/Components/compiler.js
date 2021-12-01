@@ -1,7 +1,7 @@
-import React, {useState, useContext, useEffect} from 'react' 
+import React, {useState,  useEffect} from 'react' 
 import axios from 'axios';
-import Createroomcontext from '../Context/createroom'
-import UserDataContext from '../Context/credentialscontext'; 
+// import Createroomcontext from '../Context/createroom'
+// import UserDataContext from '../Context/credentialscontext'; 
 import {useParams} from 'react-router-dom'
 import firebase from 'firebase';
 import uuid from 'react-uuid'
@@ -42,7 +42,7 @@ export default function     Compiler({history}) {
             }
         })
 
-    })
+    }, [])
     const updateCode = (editor,data,value) => {
         setCode(value)
         const url = `https://real-time-coding-default-rtdb.firebaseio.com/Rooms/${id}.json`
@@ -85,10 +85,7 @@ export default function     Compiler({history}) {
 
     }
 
-    // let myStyle={
-    //     color: 'red',
-    //     backgroundColor: 'blue'
-    // }
+    
     return (
         
             <div className="two">
