@@ -116,7 +116,7 @@ const InterviewBeta = () => {
               <div className={classes.textcopy}>
                 <Typography variant='h5' align='center'>Invite Interviewee</Typography>
                 </div>
-                <CopyToClipboard text={`https://realtime-coding.netlify.app/interviewbeta/${id}`} className={classes.margincopy}>
+                <CopyToClipboard text={`localhost:3000/interviewbeta/${id}`} className={classes.margincopy}>
                   
                 <Button variant="contained" color="primary"  startIcon={<Assignment fontSize="large" />}>
                   Copy link

@@ -96,7 +96,7 @@ export default function     Compiler({history}) {
                 <div className = "tiltbar">
                 <button className = "click1" onClick={logout}>Leave Room</button>
                 <div className = "copylinkbar">
-                <CopyToClipboard text={`https://realtime-coding.netlify.app/compiler/${id}`} >
+                <CopyToClipboard text={`localhost:3000/compiler/${id}`} >
                 <button className = "click3" >Copy Room Link</button>
                 </CopyToClipboard>
                 <CopyToClipboard text={`${id}`} >
