@@ -19,7 +19,7 @@ function MessageList({ id }) {
       console.log(messageList);
       setMessageList(messageList);
     });
-  });
+  }, []);
 
   return (
       <div>
