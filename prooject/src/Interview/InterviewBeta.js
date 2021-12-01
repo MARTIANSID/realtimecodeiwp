@@ -11,9 +11,9 @@ import { ContextProvider } from "./SocketContext";
 import Codingpart from "./Codingpart";
 import { useHistory } from "react-router-dom";
 import { useParams } from 'react-router-dom'
-
-import { fullpage, codingpart, wrapper } from './styles.css'
-import { Autorenew } from "@material-ui/icons";
+import './styles.css'
+// import { , codingpart, wrapper } from './styles.css'
+// import { Autorenew } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
