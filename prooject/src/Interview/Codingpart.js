@@ -51,7 +51,7 @@ export default function     Compiler() {
             }
         })
 
-    })
+    }, [])
     const updateCode = (editor,data,value) => {
         setCode(value)
         const url = `https://real-time-coding-default-rtdb.firebaseio.com/Interview/${id}.json`
