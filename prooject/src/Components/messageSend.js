@@ -22,7 +22,7 @@ function MessageSend({ id, email }) {
     }
 
     const enterpressed = (e) => {
-        if (e.key === 'Enter'){
+        if (e.key == 'Enter'){
             createMessage(e);
         }
         
