@@ -7,7 +7,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { SocketContext } from './SocketContext';
 
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 const useStyles = makeStyles((theme) => ({
   root: {

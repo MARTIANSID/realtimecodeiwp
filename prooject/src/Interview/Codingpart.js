@@ -5,14 +5,14 @@ import UserDataContext from '../Context/credentialscontext';
 import {useParams} from 'react-router-dom'
 import firebase from 'firebase';
 import uuid from 'react-uuid'
-import {CodeEditorEditable} from 'react-code-editor-editable'
+// import {CodeEditorEditable} from 'react-code-editor-editable'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
 import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import { Controlled as CodeMirror } from 'react-codemirror2'
-import  { Redirect } from 'react-router-dom'
+// import  { Redirect } from 'react-router-dom'
 import './compiler.css'
 import { Typography } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
@@ -23,9 +23,9 @@ import { useHistory } from "react-router-dom";
 const db = firebase.database();
 const uid = uuid()
 export default function     Compiler() {
-    const userData = useContext(UserDataContext);
+    // const userData = useContext(UserDataContext);
     // const userData = useContext(UserDataContext)
-    const roomdata = useContext(Createroomcontext)
+    // const roomdata = useContext(Createroomcontext)
     const [code, setCode] = useState("");
     const [output, setOutput] = useState("");
     const [lang, setLang] = useState("java");
@@ -51,7 +51,7 @@ export default function     Compiler() {
             }
         })
 
-    }, [])
+    })
     const updateCode = (editor,data,value) => {
         setCode(value)
         const url = `https://real-time-coding-default-rtdb.firebaseio.com/Interview/${id}.json`
@@ -102,10 +102,10 @@ export default function     Compiler() {
         axios.patch(url, prog)
     }
 
-    let myStyle={
-        color: 'balck',
-        backgroundColor: 'blue'
-    }
+    // let myStyle={
+    //     color: 'balck',
+    //     backgroundColor: 'blue'
+    // }
 
     return (
         

@@ -11,9 +11,9 @@ import { ContextProvider } from "./SocketContext";
 import Codingpart from "./Codingpart";
 import { useHistory } from "react-router-dom";
 import { useParams } from 'react-router-dom'
-
-import { fullpage, codingpart, wrapper } from './styles.css'
-import { Autorenew } from "@material-ui/icons";
+import './styles.css'
+// import { , codingpart, wrapper } from './styles.css'
+// import { Autorenew } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -116,7 +116,7 @@ const InterviewBeta = () => {
               <div className={classes.textcopy}>
                 <Typography variant='h5' align='center'>Invite Interviewee</Typography>
                 </div>
-                <CopyToClipboard text={`https://realtime-coding.netlify.app/interviewbeta/${id}`} className={classes.margincopy}>
+                <CopyToClipboard text={`localhost:3000/interviewbeta/${id}`} className={classes.margincopy}>
                   
                 <Button variant="contained" color="primary"  startIcon={<Assignment fontSize="large" />}>
                   Copy link

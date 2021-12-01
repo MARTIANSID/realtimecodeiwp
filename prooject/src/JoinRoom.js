@@ -1,12 +1,12 @@
-import React, {useCallback, useContext,useState} from "react";
-import {withRouter} from "react-router";
-import app from "./base";
+import React, { useContext,useState} from "react";
+// import {withRouter} from "react-router";
+// import app from "./base";
 import UserDataContext from "./Context/credentialscontext.js";
 import classes from "./auth.module.css"
 import classesnow from "./Components/joinroom.module.css";
 
 import axios from "axios";
-import nextId from "react-id-generator";
+// import nextId from "react-id-generator";
 import uuid from "react-uuid";
 import { useHistory } from "react-router-dom";
 
@@ -131,7 +131,7 @@ const JoinRoom = () => {
                 <div className={`${classes.overlay_panel} ${classes.overlay_right}`}>
                 <h1 className={classes.h1}>Hello, Mate!</h1>
                 <p className={classes.p }>Try out our latest interview feature</p>
-                    <h2></h2><br />
+                    <br />
                     
                     <button className={`${classes.ghost} ${classes.button} `} onClick={changeModeu} id="signUp">Take Interview</button>
                 </div>
